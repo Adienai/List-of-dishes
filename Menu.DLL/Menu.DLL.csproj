@@ -7,8 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Repositories\" />
+    <Compile Remove="Interfaces.cs\**" />
+    <Compile Remove="Repositories\**" />
+    <EmbeddedResource Remove="Interfaces.cs\**" />
+    <EmbeddedResource Remove="Repositories\**" />
+    <None Remove="Interfaces.cs\**" />
+    <None Remove="Repositories\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,6 +21,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Menu.Domain\Menu.Domain.csproj" />
   </ItemGroup>
 
 </Project>
