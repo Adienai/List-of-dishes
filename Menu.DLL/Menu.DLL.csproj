@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -8,11 +8,8 @@
 
   <ItemGroup>
     <Compile Remove="Interfaces.cs\**" />
-    <Compile Remove="Repositories\**" />
     <EmbeddedResource Remove="Interfaces.cs\**" />
-    <EmbeddedResource Remove="Repositories\**" />
     <None Remove="Interfaces.cs\**" />
-    <None Remove="Repositories\**" />
   </ItemGroup>
 
   <ItemGroup>
