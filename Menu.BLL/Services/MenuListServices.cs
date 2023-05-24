@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Menu.DLL.Repositories
+namespace Menu.BLL.Services
 {
-    internal class MenuRepository
+    internal class MenuListServices
     {
     }
 }

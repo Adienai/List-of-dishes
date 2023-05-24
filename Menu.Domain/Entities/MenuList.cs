@@ -1,6 +1,6 @@
 ﻿namespace Menu.Domain.Entities
 {
-    public class Menu
+    public class MenuList
     {
        public int Id { get; set; }
        public string Difinition { get; set; }

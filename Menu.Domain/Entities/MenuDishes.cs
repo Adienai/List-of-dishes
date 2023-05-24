@@ -5,7 +5,7 @@
         public int Id { get; set; }
         public int DishesId { get; set; }
         public int MenuId { get; set; }
-        public Menu Menu { get; set; }
+        public MenuList Menu { get; set; }
         public Dishes Dishes { get; set; }
     }
 }

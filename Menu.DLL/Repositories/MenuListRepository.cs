@@ -6,20 +6,20 @@ using System;
 
 namespace Menu.DLL.Repositories
 {
-    public class RatingRepository : IRepository<Rating>
+    public class MenuListRepository : IRepository<MenuList>
     {
         private readonly AppDBContext _db;
 
-        public RatingRepository(AppDBContext db)
+        public MenuListRepository(AppDBContext db)
         {
             _db = db;
         }
 
-        public async Task<Rating> CreateAsync(Rating entity)
+        public async Task<MenuList> CreateAsync(MenuList entity)
         {
             try
             {
-                await _db.Rating.AddAsync(entity);
+                await _db.MenuList.AddAsync(entity);
                 await _db.SaveChangesAsync();
                 return entity;
             }
@@ -29,17 +29,17 @@ namespace Menu.DLL.Repositories
             }
         }
 
-        public async Task<Rating> DeleteAsync(Rating entity)
+        public async Task<MenuList> DeleteAsync(MenuList entity)
         {
             try
             {
-                var Rating = await _db.Rating.FindAsync(entity);
-                if (Rating == null)
+                var MenuList = await _db.MenuList.FindAsync(entity);
+                if (MenuList == null)
                     throw new Exception();
 
-                _db.Rating.Remove(Rating);
+                _db.MenuList.Remove(MenuList);
                 await _db.SaveChangesAsync();
-                return Rating;
+                return MenuList;
             }
             catch (Exception ex)
             {
@@ -47,13 +47,13 @@ namespace Menu.DLL.Repositories
             }
         }
 
-        public async Task<Rating> GetAsync(int id)
+        public async Task<MenuList> GetAsync(int id)
         {
             try
             {
-                return await _db.Rating
+                return await _db.MenuList
                     .AsNoTracking()
-                    .Include(x => x.Dishes)
+                    .Include(x => x.MenuDishes)
                     .FirstOrDefaultAsync(x => x.Id == id);
             }
             catch (Exception ex)
@@ -62,12 +62,12 @@ namespace Menu.DLL.Repositories
             }
         }
 
-        public Task<IEnumerable<Rating>> GetAsync()
+        public Task<IEnumerable<MenuList>> GetAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task<Rating> UpdateAsync(Rating entity)
+        public Task<MenuList> UpdateAsync(MenuList entity)
         {
             throw new NotImplementedException();
         }

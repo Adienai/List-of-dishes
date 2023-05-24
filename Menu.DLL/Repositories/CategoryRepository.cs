@@ -47,7 +47,7 @@ namespace Menu.DLL.Repositories
             }
         }
 
-        public async Task<Category> GetAsync(int Id)
+        public async Task<Category> GetAsync(int id)
         {
             try
             {
