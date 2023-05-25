@@ -2,7 +2,7 @@ using Menu.DLL.Data;
 using Menu.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Menu.DLL.Interfaces;
+using Menu.DLL.Interface;
 using Menu.DLL.Repositories;
 using Menu.BLL.interfaces;
 using Menu.BLL.Services;
